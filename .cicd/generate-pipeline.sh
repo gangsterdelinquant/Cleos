@@ -547,7 +547,7 @@ cat <<EOF
 
   - label: ":centos: CentOS 7.7 - Test Package"
     command:
-      - "buildkite-agent artifact download "*.rpm" . --step ':centos: CentOS 7.7 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && yum localinstall *.rpm"
+      - "buildkite-agent artifact download '*.rpm' . --step ':centos: CentOS 7.7 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && yum localinstall *.rpm"
       - "nodeos --full-version"
     env:
       IMAGE_TAG: "centos-7.7-$PLATFORM_TYPE"
@@ -578,7 +578,7 @@ cat <<EOF
 
   - label: ":ubuntu: Ubuntu 16.04 - Test Package"
     command:
-      - "buildkite-agent artifact download "*.deb" . --step ':ubuntu: Ubuntu 16.04 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && apt install ./*.deb"
+      - "buildkite-agent artifact download '*.deb' . --step ':ubuntu: Ubuntu 16.04 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && apt install ./*.deb"
       - "nodeos --full-version"
     env:
       IMAGE_TAG: "ubuntu-16.04-$PLATFORM_TYPE"
@@ -609,7 +609,7 @@ cat <<EOF
 
   - label: ":ubuntu: Ubuntu 18.04 - Test Package"
     command:
-      - "buildkite-agent artifact download "*.deb" . --step ':ubuntu: Ubuntu 18.04 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && apt install ./*.deb"
+      - "buildkite-agent artifact download '*.deb' . --step ':ubuntu: Ubuntu 18.04 - Package Builder' --agent-access-token \$\$BUILDKITE_AGENT_ACCESS_TOKEN && apt install ./*.deb"
       - "./.cicd/package.sh"
     env:
       IMAGE_TAG: "ubuntu-18.04-$PLATFORM_TYPE"
